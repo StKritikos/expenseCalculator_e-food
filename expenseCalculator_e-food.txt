@@ -1,0 +1,15 @@
+const kostos2 = document.querySelectorAll('.mb-3');
+let sumAll = 0;
+
+
+for (let i = 0 ; i < kostos2.length ; i++ ){
+    if (/^[0-9,€,,]*$/.test(kostos2[i].innerText)){
+        const sketoKostos = kostos2[i].innerText.replace(',','.');
+        let kostosN = parseFloat(sketoKostos);
+            if (!isNaN(kostosN)){
+                console.log(kostosN);
+                sumAll = sumAll*100 + kostosN*100;
+		sumAll = sumAll / 100 ;
+            	console.log(sumAll);
+	    }
+}}
